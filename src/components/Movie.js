@@ -80,12 +80,6 @@ height: 193px;
     margin-bottom: -10px;
     text-shadow: 1px 1px 4px 3px rgba(0, 0, 0, 1);}
     }
-
-/* ${Details}:hover & {
-    opacity:1;
-    margin-bottom: -10px;
-    text-shadow: 1px 1px 4px 3px rgba(0, 0, 0, 1);} */
-
 `
 
 
