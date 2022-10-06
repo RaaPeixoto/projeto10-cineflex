@@ -10,7 +10,7 @@ export default function SearchBar({filterMovies,setFilterMovies}){
         onChange={(e) => setFilterMovies(e.target.value)}
         type="text"
         placeholder="Digite o nome do filme"
-        />  <img src={searchIcon}/> </div>
+        />  <img src={searchIcon} alt="icone de busca"/> </div>
         
     </SearchBarContainer>
     )

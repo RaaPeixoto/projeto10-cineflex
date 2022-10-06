@@ -70,7 +70,7 @@ console.log (selectedSeats)
       
     return(
 
-        <>
+        <Page>
     <Title> Selecione os assentos</Title>
    <SeatsContainer>
     {seats.map ((s)=><SeatsItem key={s.id} id={s.id} s={s} seatsColors={seatsColors} selectSeat={selectSeat}/> )}
@@ -87,28 +87,40 @@ console.log (selectedSeats)
         <p> {selectedDay} - {selectedTime}</p>
     </Bottom>
 
-        </>
+        </Page>
     )
 
 }
 
-const SeatsContainer = styled.div `
+const Page = styled.div `
 display:flex;
 width:100%;
+flex-direction:column;
+align-items:center;
+
+
+`
+
+
+const SeatsContainer = styled.div `
+display:flex;
+justify-content:space-between!important;
+width:370px;
 flex-wrap:wrap;
-padding: 0 24px;
+padding: 0 12px;
 
 `
 
 const SeatsSubititle =  styled.div `
 display:flex;
-width:100%;
+width:400px;
 padding: 0 78px;
-justify-content: space-between;
+justify-content: center;
 div{
     display:flex;
     flex-direction:column;
     align-items:center;
+    justify-content:center;
     font-family: 'Roboto',sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -116,10 +128,12 @@ div{
     line-height: 15px;
     letter-spacing: -0.013em;
     color: #4E5A65;
+    margin-right:13px;
+    
     }
 `
 
-const Subititle =  styled.div `
+const Subititle =  styled.p`
 width: 25px;
 height: 25px;
 background: ${props=> props.color};

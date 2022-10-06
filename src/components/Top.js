@@ -11,7 +11,7 @@ export default function Top (){
 
 const TitleBar = styled.div`
 
-width: 100vw;
+width: 100%;
 height: 67px;
 background: #C3CFD9;
 display: flex;
