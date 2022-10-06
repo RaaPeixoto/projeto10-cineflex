@@ -26,14 +26,16 @@ div{
     display:flex;
     justify-content:flex-start;
     align-items:center;
-    width:223px;
-    height:26px;
+    width:280px;
+    height:30px;
     border-radius: 0 5px 5px 0;
 }
 input{
-    margin-left:5px;
+    margin-left:4px;
     margin-right:8px;
     border:none;
+    width:240px;
+    height:24px;
     
 }
 img{
