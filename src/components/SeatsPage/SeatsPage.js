@@ -132,9 +132,10 @@ padding: 0 12px;
 
 const SeatsSubititle = styled.div`
 display:flex;
-width:400px;
+width:370px;
 padding: 0 78px;
 justify-content: center;
+
 div{
     display:flex;
     flex-direction:column;

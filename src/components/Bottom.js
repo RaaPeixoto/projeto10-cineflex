@@ -20,7 +20,7 @@ left: 0px;
 bottom: 0px;
 background: #DFE6ED;
 border: 1px solid #9EADBA;
-width: 100%;
+width: 100vw;
 height: 117px;
 padding: 14px 10px;
 align-items:center;
