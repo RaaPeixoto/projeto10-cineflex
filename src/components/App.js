@@ -26,7 +26,7 @@ export default function App (){
             <Route path="/" element={<MoviesPage />}/>
             <Route path="/sessoes/:idMovie" element={<SessionsPage />}/>
           <Route path="/assentos/:idSession" element={<SeatsPage  setConfirmSucess={setConfirmSucess} seats={seats} setSeats={setSeats}  setDate = {setDate} setSelectedTime={setSelectedTime} selectedTime={selectedTime} setSelectedMovie={setSelectedMovie} selectedMovie={selectedMovie}/>}/>
-            <Route path="/sucesso" element={<SucessPage confirmSucess={confirmSucess} seats={seats} date={date} selectedTime = {selectedTime} selectedMovie={selectedMovie}/>}/> 
+            <Route path="/sucesso" element={<SucessPage confirmSucess={confirmSucess} setConfirmSucess={setConfirmSucess} seats={seats} setSeats={setSeats} date={date} setDate={setDate} selectedTime = {selectedTime} setSelectedTime={setSelectedTime} selectedMovie={selectedMovie} setSelectedMovie={setSelectedMovie}/>}/> 
           </Routes>
           </Page>
         </BrowserRouter>

@@ -2,9 +2,14 @@ import Title from "./Title"
 import styled from "styled-components"
 import {useNavigate } from 'react-router-dom';
 
-export default function SucessPage({confirmSucess,seats,date,selectedTime,selectedMovie}){
+export default function SucessPage({confirmSucess,setConfirmSucess,seats,setSeats,date,setDate,selectedTime,setSelectedTime,selectedMovie,setSelectedMovie}){
 let navigate =useNavigate();
     function backHome() {
+      setConfirmSucess([])
+      setSeats([])
+      setDate("")
+      setSelectedTime("")
+      setSelectedMovie("")
         navigate('/')
     }
     return (

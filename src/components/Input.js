@@ -49,7 +49,7 @@ export default function Input ({seat,allSeats,buyers,setBuyers}){
         <Contains> Nome do comprador:</Contains>
         <InputBar type= "text" onChange={e => addBuyerName(e.target.value)}placeholder="Digite seu nome..." required/>
         <Contains> CPF do comprador :</Contains>
-        <InputBar type= "number" value={buyers.cpf} onChange={e => addBuyerCPF (e.target.value)}placeholder="Digite seu CPF..." required/>
+        <InputBar  min="10000000000" max="99999999999"type= "text"  value={buyers.cpf} onChange={e => addBuyerCPF (e.target.value)}placeholder="Digite seu CPF..." required/>
         </InputContainer>
     )
 
