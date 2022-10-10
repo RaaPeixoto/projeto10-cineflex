@@ -15,7 +15,7 @@ export default function MoviesPage(){
         const promise = axios.get(URL)
     
         promise.then((res) => {
-          console.log(res.data)
+        
           setMovies(res.data) 
         })
     
@@ -37,11 +37,12 @@ export default function MoviesPage(){
     return(
 
         <>
+       
     <Title> Selecione o Filme</Title>
     <SearchBar filterMovies={filterMovies} setFilterMovies={setFilterMovies}/>
     <MoviesContainer>
          
-          {movies.map((mv) => mv.title.toLowerCase().includes(filterMovies.toLowerCase())? <Movie key={mv.id} img={mv.posterURL} title = {mv.title} id = {mv.id}/> : console.log("não"))}
+          {movies.map((mv) => mv.title.toLowerCase().includes(filterMovies.toLowerCase())? <Movie key={mv.id} img={mv.posterURL} title = {mv.title} id = {mv.id}/> : "")}
     </MoviesContainer>
         </>
     )
@@ -51,7 +52,7 @@ export default function MoviesPage(){
 const MoviesContainer = styled.div `
 display:flex;
 flex-wrap:wrap;
-width:100vw;
+width:380px;
 justify-content:space-between;
 
 padding: 0 30px;

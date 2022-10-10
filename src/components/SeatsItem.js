@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function SeatsItem({s,seatsColors,selectSeat,id}){
 
 return (
-<Seat  disabled = {!s.isAvailable}itemColor = {()=> seatsColors (s.isAvailable,id)} onClick = {()=> selectSeat(id)}> {s.name} </Seat>
+<Seat itemColor = {()=> seatsColors (s)} onClick = {()=> selectSeat(s)}> {s.name} </Seat>
 )
 }
 

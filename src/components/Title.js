@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Title (props){
     return (
 
-        <TitleContainer>
+        <TitleContainer color = {props.color} weight= {props.weight}>
         <p>{props.children}</p>
     </TitleContainer>
     )
@@ -18,11 +18,11 @@ height: 110px;
 p{
     font-family: 'Roboto';
 font-style: normal;
-font-weight: 400;
+font-weight: ${props=> props.weight? props.weight: "400"} ;
 font-size: 24px;
 line-height: 28px;
 letter-spacing: 0.04em;
-color: #293845;
+color: ${props=> props.color? props.color: "#293845"} ;
 }
 
 `

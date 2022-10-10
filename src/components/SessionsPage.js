@@ -6,6 +6,7 @@ import Title from "./Title";
 import Bottom from "./Bottom";
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
+import BackIcon from './BackIcon';
 
 export default function SessionsPage(){
     const { idMovie } = useParams();
@@ -19,7 +20,7 @@ export default function SessionsPage(){
         const promise = axios.get(URL)
     
         promise.then((res) => {
-          console.log(res.data)
+         
           setDays(res.data.days) 
           setSelectedMovie(res.data) 
         })
@@ -30,7 +31,7 @@ export default function SessionsPage(){
         
           setError(true) 
         })
-      },  )
+      },  [])
 
       if (error === true) {
         return <div>Erro na requisição! Tente de novo</div>
@@ -42,6 +43,7 @@ export default function SessionsPage(){
     return(
 
         <>
+        <BackIcon/>
     <Title> Selecione o horário</Title>
     <SessionsContainer>
             {days.map((d,id)=>  
