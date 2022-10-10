@@ -13,7 +13,7 @@ export default function SessionsPage(){
 
     const [days, setDays] = useState([]) 
    const [selectedMovie,setSelectedMovie] =useState([]) 
-   
+   console.log(days)
     const [error, setError] = useState(false) 
     useEffect(() => {
         const URL = `https://mock-api.driven.com.br/api/v5/cineflex/movies/${idMovie}/showtimes`
@@ -48,16 +48,16 @@ export default function SessionsPage(){
     <SessionsContainer>
             {days.map((d,id)=>  
             <Session key={id}> 
-            <Day> 
-            {d.weekday} </Day> 
+            <Day data-identifier="session-date"> 
+            {d.weekday} - {d.date}</Day> 
             <div>
-            {(d.showtimes).map ((h)=> <Link to = {`/assentos/${h.id}`} style={{ textDecoration: 'none' }} key={h.id}><Time> {h.name}</Time></Link>)}
+            {(d.showtimes).map ((h)=> <Link to = {`/assentos/${h.id}`} style={{ textDecoration: 'none' }} key={h.id}><Time data-identifier="hour-minute-btn"> {h.name}</Time></Link>)}
             </div>
            
             </Session>)}
     </SessionsContainer>
-    <Bottom image= {selectedMovie.posterURL}>
-        <p>{selectedMovie.title}</p>
+    <Bottom image= {selectedMovie.posterURL} >
+        <p data-identifier="movie-and-session-infos-preview">{selectedMovie.title}</p>
     </Bottom>
 
         </>
@@ -82,6 +82,7 @@ div{
 }
 `
 const Day= styled.div `
+width:300px;
 font-family: 'Roboto',sans-serif;
 font-style: normal;
 font-weight: 400;

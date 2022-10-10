@@ -5,7 +5,7 @@ export default function Movie({img,title,id}){
 
 return (
   
-    <MovieContainer>
+    <MovieContainer data-identifier="movie-outdoor">
         <img src ={img} alt={title}/>
         <Details > {title} <Link to={`/sessoes/${id}`}><button>HORÁRIOS DAS SESSÕES</button></Link> </Details>
     </MovieContainer>

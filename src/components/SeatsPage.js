@@ -55,7 +55,6 @@ export default function SeatsPage({ setConfirmSucess, seats, setSeats, setSelect
         const promise = axios.get(URL)
 
         promise.then((res) => {
-            
             setSeats(res.data.seats)
             setSelectedMovie(res.data.movie)
             setSelectedDay(res.data.day.weekday)
@@ -65,8 +64,6 @@ export default function SeatsPage({ setConfirmSucess, seats, setSeats, setSelect
 
         promise.catch((err) => {
             console.log(err.response.data)
-
-
             setError(true)
         })
     }, [])
@@ -87,13 +84,13 @@ export default function SeatsPage({ setConfirmSucess, seats, setSeats, setSelect
             compradores: [buyers]
         });
         request.catch((err) => {
-            console.log(err.response.data)
+            alert(err.response.data)
 
 
-            setError(true)
+           
         })
 
-        request.then((res) =>
+        request.then(() =>
 
             navigate('/sucesso')
 
@@ -108,17 +105,17 @@ export default function SeatsPage({ setConfirmSucess, seats, setSeats, setSelect
                 {seats.map((s) => <SeatsItem key={s.id} id={s.id} s={s} seatsColors={seatsColors} selectSeat={selectSeat} />)}
             </SeatsContainer>
             <SeatsSubititle>
-                <div><Subititle color="#1AAE9E" border="#0E7D71" /> Selecionado</div>
-                <div><Subititle color="#C3CFD9" border="#7B8B99" /> Disponível</div>
-                <div><Subititle color="#FBE192" border="#F7C52B" /> Indisponível</div>
+                <div><Subititle color="#1AAE9E" border="#0E7D71" data-identifier="seat-selected-subtitle"/> Selecionado</div>
+                <div><Subititle color="#C3CFD9" border="#7B8B99" data-identifier="seat-available-subtitle"/> Disponível</div>
+                <div><Subititle color="#FBE192" border="#F7C52B" data-identifier="seat-unavailable-subtitle"/> Indisponível</div>
             </SeatsSubititle>
             <Form onSubmit={bookSeats}>
                 {selectedSeats.map((seat) => <Input key={seat} seat={seat} allSeats={seats} buyers={buyers} setBuyers={setBuyers} />)}
-                {selectedSeats.length > 0 ? <BookButton type="submit">Reservar assento(s)</BookButton> : ""}
+                {selectedSeats.length > 0 ? <BookButton  data-identifier="reservation-btn" type="submit">Reservar assento(s)</BookButton> : ""}
             </Form>
             <Bottom image={selectedMovie.posterURL}>
-                <p>{selectedMovie.title}</p>
-                <p> {selectedDay} - {selectedTime}</p>
+                <p data-identifier="movie-and-session-infos-preview">{selectedMovie.title}</p>
+                <p data-identifier="movie-and-session-infos-preview"> {selectedDay} - {selectedTime}</p>
             </Bottom>
         </>
     )

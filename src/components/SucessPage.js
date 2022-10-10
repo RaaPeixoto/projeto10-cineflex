@@ -18,35 +18,35 @@ let navigate =useNavigate();
 
    <Container>
    <ContainerTitle> Filme e sessão</ContainerTitle>
-   <Content>{selectedMovie.title}</Content>
-   <Content>{date} {selectedTime}</Content>
+   <Content data-identifier="movie-session-infos-reserve-finished">{selectedMovie.title}</Content>
+   <Content data-identifier="movie-session-infos-reserve-finished">{date} {selectedTime}</Content>
     </Container>
 
 
    <Container>
-   <ContainerTitle> Ingresso </ContainerTitle>
-   {confirmSucess.map ((item)=> 
+   <ContainerTitle> Ingressos </ContainerTitle>
+   {confirmSucess.map((item)=> 
    seats.map((s)=> s.id === item.idAssento?
-    <>
-    <Content key={s.id}>Assento {s.name} </Content>
-      </> :"" )
+    <div key={item.idAssento}>  
+    <Content data-identifier="seat-infos-reserve-finished">Assento {s.name} </Content>
+      </div> :"" )
   )
   } 
     </Container>
 
    <Container>
    <ContainerTitle>Comprador(es)</ContainerTitle>
- {confirmSucess.map ((item)=> 
+ {confirmSucess.map((item)=> 
    seats.map((s)=> s.id === item.idAssento?
-    <>
+    <div key={item.idAssento}>
     <Seats>Assento: {s.name} </Seats>
-     <Content> Nome: {item.nome}</Content> 
-      <Content> CPF: {item.cpf}</Content>
-      </> :"" )
+     <Content data-identifier="buyer-infos-reserve-finished"> Nome: {item.nome}</Content> 
+      <Content data-identifier="buyer-infos-reserve-finished"> CPF: {item.cpf}</Content>
+      </div> :"" )
   )
   } 
  </Container>
-<Button onClick={backHome}> Voltar pra Home</Button>
+<Button onClick={backHome} data-identifier="back-to-home-btn"> Voltar pra Home</Button>
     </>
     )
 } 

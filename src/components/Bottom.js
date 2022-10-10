@@ -4,7 +4,7 @@ export default function Bottom(props){
     return (
 
         <BottomContainer>
-        <Image><img src={props.image} alt="filme escolhido"/></Image>
+        <Image><img src={props.image} alt="filme escolhido" data-identifier="movie-img-preview"/></Image>
         <div>
         {props.children}
         </div>
