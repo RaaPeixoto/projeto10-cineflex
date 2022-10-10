@@ -1,4 +1,4 @@
-import Title from "./Title"
+import Title from "../Title"
 import styled from "styled-components"
 import {useNavigate } from 'react-router-dom';
 

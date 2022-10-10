@@ -1,10 +1,10 @@
 
 import GlobalStyle from "../assets/GlobalStyle.js"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import MoviesPage from "./MoviesPage.js"
-import SessionsPage from "./SessionsPage.js";
-import SeatsPage from "./SeatsPage.js";
-import SucessPage from "./SucessPage.js";
+import MoviesPage from "./MoviesPage/MoviesPage"
+import SessionsPage from "./SessionsPage/SessionsPage.js";
+import SeatsPage from "./SeatsPage/SeatsPage"
+import SucessPage from "./SucessPage/SucessPage.js";
 import Top from "./Top.js";
 import styled from "styled-components";
 import { useState } from "react";

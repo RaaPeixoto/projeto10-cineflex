@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import searchIcon from "../assets/img/serachIcon.png"
+import searchIcon from "../../assets/img/serachIcon.png"
 export default function SearchBar({filterMovies,setFilterMovies}){
     
     return (

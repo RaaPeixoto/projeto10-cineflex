@@ -1,18 +1,17 @@
 import styled from "styled-components";
 import axios from "axios"
 import { useEffect, useState } from "react"
-import Title from "./Title";
-import Bottom from "./Bottom";
+import Title from "../Title";
+import Bottom from "../Bottom";
 import { useParams, useNavigate } from 'react-router-dom';
 import SeatsItem from "./SeatsItem";
-import Loading from "./Loading";
+import Loading from "../Loading";
 import Input from "./Input";
-import BackIcon from "./BackIcon";
+import BackIcon from "../BackIcon";
 export default function SeatsPage({ setConfirmSucess, seats, setSeats, setSelectedTime, selectedTime, setDate, setSelectedMovie, selectedMovie }) {
     let navigate = useNavigate()
     const { idSession } = useParams();
-    const [selectedDay, setSelectedDay] = useState("")
-    const [error, setError] = useState(false);
+    const [selectedWeekDay, setSelectedWeekDay] = useState("")
     const [selectedSeats, setSelectedSeats] = useState([])
     const [buyers, setBuyers] = useState([])
 
@@ -55,24 +54,23 @@ export default function SeatsPage({ setConfirmSucess, seats, setSeats, setSelect
         const promise = axios.get(URL)
 
         promise.then((res) => {
+
             setSeats(res.data.seats)
             setSelectedMovie(res.data.movie)
-            setSelectedDay(res.data.day.weekday)
+            setSelectedWeekDay(res.data.day.weekday)
             setSelectedTime(res.data.name)
             setDate(res.data.day.date)
         })
 
         promise.catch((err) => {
-            console.log(err.response.data)
-            setError(true)
+            alert(err.response.data)
+          
         })
     }, [])
 
-    if (error === true) {
-        return <div>Erro na requisição! Tente de novo</div>
-    }
+   
 
-    if (!error && seats.length === 0) {
+    if (seats.length === 0) {
         return <Loading>Tela de loading...</Loading>
     }
 
@@ -115,7 +113,7 @@ export default function SeatsPage({ setConfirmSucess, seats, setSeats, setSelect
             </Form>
             <Bottom image={selectedMovie.posterURL}>
                 <p data-identifier="movie-and-session-infos-preview">{selectedMovie.title}</p>
-                <p data-identifier="movie-and-session-infos-preview"> {selectedDay} - {selectedTime}</p>
+                <p data-identifier="movie-and-session-infos-preview"> {selectedWeekDay} - {selectedTime}</p>
             </Bottom>
         </>
     )

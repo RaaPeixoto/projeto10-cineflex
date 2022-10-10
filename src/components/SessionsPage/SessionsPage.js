@@ -2,11 +2,11 @@ import { useParams } from 'react-router-dom';
 import styled from "styled-components";
 import axios from "axios"
 import { useEffect, useState } from "react"
-import Title from "./Title";
-import Bottom from "./Bottom";
+import Title from "../Title";
+import Bottom from "../Bottom";
 import { Link } from 'react-router-dom';
-import Loading from './Loading';
-import BackIcon from './BackIcon';
+import Loading from '../Loading';
+import BackIcon from '../BackIcon';
 
 export default function SessionsPage(){
     const { idMovie } = useParams();
